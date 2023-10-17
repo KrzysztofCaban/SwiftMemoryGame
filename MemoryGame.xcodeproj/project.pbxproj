@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3858F4812ADE572500D8D6A7 /* ThemeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3858F4802ADE572500D8D6A7 /* ThemeButton.swift */; };
 		38655CBC2AD526820078F8F3 /* MemoryGameApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38655CBB2AD526820078F8F3 /* MemoryGameApp.swift */; };
 		38655CBE2AD526820078F8F3 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38655CBD2AD526820078F8F3 /* ContentView.swift */; };
 		38655CC02AD526830078F8F3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 38655CBF2AD526830078F8F3 /* Assets.xcassets */; };
@@ -36,6 +37,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3858F4802ADE572500D8D6A7 /* ThemeButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeButton.swift; sourceTree = "<group>"; };
 		38655CB82AD526820078F8F3 /* MemoryGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MemoryGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		38655CBB2AD526820078F8F3 /* MemoryGameApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryGameApp.swift; sourceTree = "<group>"; };
 		38655CBD2AD526820078F8F3 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -100,6 +102,7 @@
 			children = (
 				38655CBB2AD526820078F8F3 /* MemoryGameApp.swift */,
 				38655CBD2AD526820078F8F3 /* ContentView.swift */,
+				3858F4802ADE572500D8D6A7 /* ThemeButton.swift */,
 				38F8DC912AD5312E00F29FDA /* Navigation.swift */,
 				38655CBF2AD526830078F8F3 /* Assets.xcassets */,
 				38655CC12AD526830078F8F3 /* Preview Content */,
@@ -267,6 +270,7 @@
 				38655CE62AD526D10078F8F3 /* CardView.swift in Sources */,
 				38655CBC2AD526820078F8F3 /* MemoryGameApp.swift in Sources */,
 				38F8DC922AD5312E00F29FDA /* Navigation.swift in Sources */,
+				3858F4812ADE572500D8D6A7 /* ThemeButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -26,7 +26,7 @@ struct CardView: View {
         }
         .onTapGesture {
             isFlipped.toggle()
-        }
+        }.aspectRatio(2/3, contentMode: .fill)
         
         
     }
