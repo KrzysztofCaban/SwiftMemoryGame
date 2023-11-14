@@ -13,41 +13,44 @@ struct ContentView: View {
     
     var body: some View {
         VStack {
-            Button(action: {
-                viewModel.shuffle()                }) {
-                    Text("Przetasuj karty")
-                        .font(.headline)
-                        .padding()
-                        .background(Color.blue)
-                        .foregroundColor(.white)
-                        .cornerRadius(10)
-                }
+            Text("Memo").font(.largeTitle)
+            
             cards.animation(.default, value: viewModel.cards)
             ThemeButtons
+            Button(action: {
+                viewModel.shuffle()
+            }){
+                Text("Przetasuj karty")
+                    .font(.headline)
+                    .padding()
+                    .background(viewModel.themeColor)
+                    .foregroundColor(.white)
+                    .cornerRadius(10)
+            }
         }}
     
     var cards : some View {
-            LazyVGrid(columns: [GridItem(.adaptive(minimum: 85), spacing:0)]){
-                ForEach(viewModel.cards) { card in
-                    CardView(card: card)
-                        .aspectRatio(2/3, contentMode: .fit)
-                        .padding(4)
-                        .onTapGesture {
-                            viewModel.choose(card)
-                        }
-                }
-            }.foregroundColor(viewModel.themeColor)
-        }
+        LazyVGrid(columns: [GridItem(.adaptive(minimum: 85), spacing:0)]){
+            ForEach(viewModel.cards) { card in
+                CardView(card: card)
+                    .aspectRatio(2/3, contentMode: .fit)
+                    .padding(4)
+                    .onTapGesture {
+                        viewModel.choose(card)
+                    }
+            }
+        }.foregroundColor(viewModel.themeColor)
+    }
     
     
     var ThemeButtons: some View{
         HStack{
             Spacer()
-            ThemeButton(viewModel: viewModel, imageName: "pencil", content: "Motyw 1", ownColor: Color.green)
+            ThemeButton(viewModel: viewModel, imageName: "face.smiling.inverse", content: "Emojis", ownColor: Color.orange).foregroundColor(viewModel.themeColor)
             Spacer()
-            ThemeButton(viewModel: viewModel, imageName: "pencil", content: "Motyw 2", ownColor: Color.blue)
+            ThemeButton(viewModel: viewModel, imageName: "pawprint.fill", content: "Animals", ownColor: Color.blue).foregroundColor(viewModel.themeColor)
             Spacer()
-            ThemeButton(viewModel: viewModel, imageName: "pencil", content: "Motyw 1", ownColor: Color.red)
+            ThemeButton(viewModel: viewModel, imageName: "figure.racquetball", content: "Sports", ownColor: Color.green).foregroundColor(viewModel.themeColor)
             Spacer()
         }
     }

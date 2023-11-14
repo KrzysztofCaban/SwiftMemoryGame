@@ -20,11 +20,20 @@ struct MemoGameModel<CardContent> where CardContent: Equatable{
             cards.append(Card (content: content, id: "\(pairIndex+1)b"))
         }
     }
+    
+    mutating func changeCardSet(numberPairsOfCard: Int, cardContentFactory:(Int)->CardContent){
+        cards = []
+        // dodaj karty parami numberPairsOfCard * 2
+        for pairIndex in 0..<max(2, numberPairsOfCard) {
+            let content = cardContentFactory(pairIndex)
+            cards.append(Card (content: content, id: "\(pairIndex+1)a"))
+            cards.append(Card (content: content, id: "\(pairIndex+1)b"))
+        }
+    }
 
     // NOWA WERSJA
     var indexOfOneAndOnlyFaceUpCard: Int? {
         get {
-            //nie wiem gdzie się podział return
             cards.indices.filter{index in cards[index].isFaceUp}.only
         }
         set {
@@ -37,7 +46,7 @@ struct MemoGameModel<CardContent> where CardContent: Equatable{
         if let chosenIndex = cards.firstIndex (where: {$0.id == card.id}) {
             if !cards [chosenIndex].isFaceUp && !cards[chosenIndex].isMatched {
                 if let potentialMatchedIndex = indexOfOneAndOnlyFaceUpCard {
-                    if cards[chosenIndex].content==cards [potentialMatchedIndex].content {
+                    if cards[chosenIndex].content==cards[potentialMatchedIndex].content {
                         cards[chosenIndex].isMatched = true
                         cards[potentialMatchedIndex].isMatched = true
                     }
